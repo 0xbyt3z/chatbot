@@ -24,10 +24,6 @@ all_words = data['all_words']
 tags = data['tags']
 model_state = data["model_state"]
 
-#store the states of the program
-states = {
-    "isregistered":False,
-}
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
@@ -55,8 +51,8 @@ def Bot(req):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                res = f"{bot_name}: {random.choice(intent['responses'])}"
+                res = f"{random.choice(intent['responses'])}"
     else:
-        res = f"{bot_name}: I do not understand..."
+        res = "I do not understand..."
     
     return res,tag

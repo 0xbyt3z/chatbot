@@ -4,8 +4,12 @@ from requests import Session
 
 import restfulChat
 
-name = '' # Enter your name here!
-chat_url = ''
+#store the states of the program
+states = {
+    "isregistered":False,
+}
+
+name = 'chamara' # Enter your name here!
 server = Session()
 
 # GUI:
@@ -20,18 +24,25 @@ window = QWidget()
 window.setLayout(layout)
 window.show()
 
+def display_bot_response(response):
+    text_area.append(f"Bot : {response}")
+
 def validate_response(response):
     response, tag = response
+
     if(tag == "greetings"):
         pass
     if(tag == "registration"):
         if(not states["isregistered"]):
             #request user information
+            display_bot_response(response)
             states["isregistered"] = True
         else:
-            res.append(f"{bot_name}: You are already registered")
+            display_bot_response("You are already registered")
+    else:
+        display_bot_response(response)
 
-def botresponse():
+def get_bot_reponse():
     response = restfulChat.Bot(message.text())
     validate_response(response)
 
@@ -44,11 +55,11 @@ def display_new_messages():
         text_area.append(new_message)
 
         
-    botresponse()
+    get_bot_reponse()
+    message.clear()
 
 
 # Fire a Enter event
 message.returnPressed.connect(display_new_messages)
-
 
 app.exec_()

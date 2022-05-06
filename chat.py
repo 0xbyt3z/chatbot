@@ -1,5 +1,6 @@
 import random
 import json
+import nltk
 
 import torch
 
@@ -8,6 +9,8 @@ from botSql import registration
 
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
+
+nltk.download("punkt")
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -32,9 +35,11 @@ model.eval()
 bot_name = "Bot"
 print("Let's chat! (type 'quit' to exit)")
 
-def Bot(req):
+
+while(True):
     sentence = req
-    res = ""
+    if(sentence == "quit"):
+        break
     
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
@@ -51,8 +56,7 @@ def Bot(req):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                res = f"{random.choice(intent['responses'])}"
+                print(f"{random.choice(intent['responses'])}")
     else:
-        res = "I do not understand..."
+        print("I do not understand...")
     
-    return res,tag

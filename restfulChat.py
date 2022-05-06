@@ -3,6 +3,9 @@ import json
 
 import torch
 
+#handle the database
+from botSql import registration
+
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
@@ -21,18 +24,22 @@ all_words = data['all_words']
 tags = data['tags']
 model_state = data["model_state"]
 
+#store the states of the program
+states = {
+    "isregistered":False,
+}
+
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Sam"
+bot_name = "Bot"
 print("Let's chat! (type 'quit' to exit)")
-while True:
-    # sentence = "do you use credit cards?"
-    sentence = input("You: ")
-    if sentence == "quit":
-        break
 
+def Bot(req):
+    sentence = req
+    res = ""
+    
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
@@ -48,6 +55,8 @@ while True:
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                res = f"{bot_name}: {random.choice(intent['responses'])}"
     else:
-        print(f"{bot_name}: I do not understand...")
+        res = f"{bot_name}: I do not understand..."
+    
+    return res,tag

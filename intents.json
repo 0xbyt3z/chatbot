@@ -11,10 +11,21 @@
         "Good day"
       ],
       "responses": [
-        "Hey :-)",
+        "Hey",
         "Hello, thanks for visiting",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "registration",
+      "patterns": [
+        "register",
+        "How can I register?",
+        "I want to register!"
+      ],
+      "responses": [
+        "Fill the Application"
       ]
     },
     {
@@ -47,6 +58,7 @@
       "tag": "payments",
       "patterns": [
         "Do you take credit cards?",
+        "Do you take debit cards?",
         "Do you accept Mastercard?",
         "Can I pay with Paypal?",
         "Are you cash only?"
@@ -66,18 +78,6 @@
       "responses": [
         "Delivery takes 2-4 days",
         "Shipping takes 2-4 days"
-      ]
-    },
-    {
-      "tag": "funny",
-      "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
-      ],
-      "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
       ]
     }
   ]

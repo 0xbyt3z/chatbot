@@ -1,5 +1,7 @@
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
+
+from PySide2.QtGui import QIcon
 from requests import Session
 
 import restfulChat
@@ -22,6 +24,9 @@ layout.addWidget(text_area)
 layout.addWidget(message)
 window = QWidget()
 window.setLayout(layout)
+window.setWindowTitle("Chat Bot")
+window.setWindowIcon(QIcon("logo.png"))
+window.setGeometry(300, 300, 700, 900)
 window.show()
 
 def display_bot_response(response):

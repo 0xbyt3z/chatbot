@@ -37,7 +37,8 @@ print("Let's chat! (type 'quit' to exit)")
 
 
 while(True):
-    sentence = req
+
+    sentence = input("You : ")
     if(sentence == "quit"):
         break
     

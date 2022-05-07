@@ -10,8 +10,6 @@ from botSql import registration
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
-nltk.download("punkt")
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('intents.json', 'r') as json_data:

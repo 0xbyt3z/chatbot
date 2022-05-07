@@ -7,8 +7,9 @@ def registration(name,age,tel):
     id = executeQuery(("select max(id) from clients"))[0][0]
     #make id equals 1 if the table is empty
     id = 1 if id == None else id +1
-    executeQuery(f"insert into clients(id,name,age,tel) values({1},'{name}','{age}','{tel}')")
+    executeQuery(f"insert into clients(id,name,age,tel) values({id},'{name}','{age}','{tel}')")
     print(f"\n\nyour registration id is {id}!\nThank you for your interest.")
+    return id
 
 
 def connect():

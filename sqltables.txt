@@ -1,0 +1,8 @@
+create table clients(
+    id integer,
+    name text,
+    age text,
+    tel text,
+    qual text,
+    course text
+);

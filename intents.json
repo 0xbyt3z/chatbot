@@ -1,0 +1,155 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey",
+        "Hello, thanks for visiting",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "registration",
+      "patterns": [
+        "register",
+        "How can I register?",
+        "I want to register!"
+      ],
+      "responses": [
+        "Please answer the following"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "course",
+      "patterns": [
+        "What are the courses do you have?",
+        "What kinds of courses are there?",
+        "What courses are available for me?"
+      ],
+      "responses": [
+        "You can follow courses under\n- Computing\n- Engineering\n- Business and Law\n- Tourism and Hospitality\n- Languages",
+        "A wide range of courses are available from a certificate level to a MSc"
+      ]
+    },
+    {
+      "tag": "faculties",
+      "patterns": [
+        "What faulties are available",
+        "What are the faculties available?",
+        "What faculties do you have?",
+        "In which areas i can follow the courses"
+      ],
+      "responses": [
+        "The faculties are\n- Computing\n- Engineering\n- Business and Law\n- Tourism and Hospitality\n- Languages"
+      ]
+    },
+    {
+      "tag": "loan",
+      "patterns": [
+        "How can i request a student loan?",
+        "How to apply for a student loan?",
+        "Can i request a student loan?"
+      ],
+      "responses": [
+        "Please contact 011 7 572 572 \nfor more information on student loan"
+      ]
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you take debit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Cash",
+        "We accept most major credit cards, and Cash"
+      ]
+    },
+    {
+      "tag": "plan",
+      "patterns": [
+        "What payment plans are available?",
+        "Can i pay course fees in installments?",
+        "In which areas i can follow the courses"
+      ],
+      "responses": [
+        "You can pay in whole or using installments.\nYou may also request a student loan paying the course fee."
+      ]
+    },
+    {
+      "tag": "certificate",
+      "patterns": [
+        "What are the entry requirements for a certificate level",
+        "What courses i can follow in certificate level",
+        "Tell me details about certificate level"
+      ],
+      "responses": [
+        "Certicate in Information Technology\nEntry Requirements\n- Completion of GCE O/L, A/L examinations AND Certificate in English (CIE) course\n\nDuration\n- Weekday : 6 Months\n- Weekend : 6 Months\n- Online : 6 Months\n\nCourse Fees\n- Local Students : LKR 24 000\n- International Students : USD 150"
+      ]
+    },
+    {
+      "tag": "diploma",
+      "patterns": [
+        "What are the entry requirements for a diploma",
+        "What courses i can follow in diploma",
+        "Tell me details about diploma",
+        "what is after completing a certificate level",
+        "what is after finish a certificate level"
+      ],
+      "responses": [
+        "Diploma in Information Technology\nEntry Requirements\n- GCE A/L examination OR\n- Completion of Certificate in Information Technology (CIT) course\n\nDuration\n- Weekday : 12 Months\n- Weekend : 12 Months\n- Online : 12 Months\n\nCourse Fees\n- Local Students : LKR 48 000\n- International Students : USD 300"
+      ]
+    },
+    {
+      "tag": "hnd",
+      "patterns": [
+        "What are the entry requirements for a hnd",
+        "What courses i can follow in hnd",
+        "Tell me details about hnd",
+        "what is after completing a diploma",
+        "what is after finishing a diploma"
+      ],
+      "responses": [
+        "Higher National Diploma in Software Engineering/Networking\nEntry Requirements\n- Advanced Levels with 2 passes, including Credit for English and Mathematics at Ordinary Levels (G.C.E./London Advanced Levels) OR\n- Ordinary Levels with Credit for English AND Mathematics, including minimum a recognized ICT Diploma (DiTEC) of a duration of 8 months OR\n- Pending Advanced Level results\n\nDuration\n- Weekday : 18 Months\n- Weekend : 24 Months\n- Online : 24 Months\n\nCourse Fees\n- Local Students : LKR 295 000\n- International Students : USD 2200\n\nUniversity Fee\n- Local Students : USD 360\n- International Students : USD 500"
+      ]
+    },
+    {
+      "tag": "beng",
+      "patterns": [
+        "What are the entry requirements for a beng",
+        "Tell me details about beng",
+        "what is after completing a hnd",
+        "what is after finish a hnd"
+      ],
+      "responses": [
+        "BEng(Hons) in Software Engineering\nEntry Requirements\n- Pearson BTEC HND in Computing/ IT/IS OR\n- BCS Diploma OR\n- NCC IAD OR\n- A recognized Advanced/ Higher Diploma in IT/ IS\n\nDuration\n- Weekend : 12 Months\n\nCourse Fees\n- Local Students : LKR 270 000\n- International Students : USD 1900\n\nUniversity Fee\n- Local Students : USD 740\n- International Students : USD 800"
+      ]
+    }
+    
+  ]
+}

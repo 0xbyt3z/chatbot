@@ -12,19 +12,32 @@ import restfulChat
 import botSql 
 
 
-#store the state of the program
+#store the states of the program
 states = {
     "tag":"",
     "isregistered":False,
     "issubmitting":False,
-    "user" : {"name":"","age":0,"tel":"","qual":"","course":""}
+    "user" : {"name":"","age":0,"tel":""}
 }
 
-name = 'You' # Enter your name here!
+name = 'chamara' # Enter your name here!
 server = Session()
 
-# GUI:
 app = QApplication([])
+window =  QWidget()
+container = QVBoxLayout()
+message = QLineEdit()
+layout = QVBoxLayout()
+layout.addWidget(container)
+layout.addWidget(message)
+window = QWidget()
+window.setLayout(layout)
+window.setWindowTitle("Chat Bot")
+window.setWindowIcon(QIcon("logo.png"))
+window.setGeometry(300, 100, 500, 700)
+window.show()
+# GUI:
+'''
 text_area = QTextEdit()
 text_area.setFocusPolicy(Qt.NoFocus)
 message = QLineEdit()
@@ -37,28 +50,29 @@ window.setWindowTitle("Chat Bot")
 window.setWindowIcon(QIcon("logo.png"))
 window.setGeometry(300, 100, 500, 700)
 window.show()
-
+'''
 
 def display_bot_response(msg):
-    text_area.append(f"Bot :\n{msg}\n")
+    button1 =  QPushButton(f"Bot : {msg}")
+    layout.addWidget(button1)
+    #text_area.append(f"Bot : {msg}")
 
 def validate_response(response):
     response, tag = response
     states["tag"] = tag
-    if(tag == "greeting"):
-        display_bot_response(response)
-    elif(tag == "plan"):
-        display_bot_response(response)
-    elif(tag == "registration"):
+    if(tag == "greetings"):
+        pass
+    if(tag == "registration"):
         if(not states["isregistered"]):
             #request user information
+            display_bot_response(response)
             states["issubmitting"]  =True
             states["isregistered"] = True
             display_bot_response("Please enter your name")
         else:
             display_bot_response("You are already registered")
     else:
-        display_bot_response(response)
+        text_area.append(f"Bot : {response}")
     
     print(states)
 
@@ -85,20 +99,15 @@ def get_new_messages():
                     display_bot_response("Please enter your contact number")
                 elif(states["user"]["tel"] == ""):
                     states["user"]["tel"] = message.text()
-                    display_bot_response("What is your highest qualification?")
-                elif(states["user"]["qual"] == ""):
-                    states["user"]["qual"] = message.text()
-                    display_bot_response("What course do you expect to join?")
-                elif(states["user"]["course"] == ""):
-                    states["user"]["course"] = message.text()
-
                     states["issubmitting"] = False
-                    name,age,tel,qual,course = states['user'].values()
-                    id = botSql.registration(name, age,tel,qual,course)
+                    name,age,tel = states['user'].values()
+                    id = botSql.registration(name, age, tel)
                     display_bot_response(f"Your registration number is {id}")
                     
         else:
-            text_area.append(f"You :\n{message.text()}\n")
+            button1 =  QPushButton(f"You : {message.text()}")
+            layout.addWidget(button1)
+            #text_area.append(f"You : {message.text()}")
             get_bot_reponse(message.text())
     
     message.clear()

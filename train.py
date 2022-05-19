@@ -19,11 +19,6 @@ xy = []
 for intent in intents['intents']:
     tag = intent['tag']
 
-    '''
-    i may add custom values representing datastorage requirements
-    here
-    '''
-
     # add to tag list
     tags.append(tag)
     for pattern in intent['patterns']:
@@ -60,7 +55,7 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters 
-num_epochs = 1000
+num_epochs = 10000
 batch_size = 8
 learning_rate = 0.001
 
